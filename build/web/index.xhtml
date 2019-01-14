@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+ >
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Subir</title>
+
+        <h:outputStylesheet  name="estilo.css" library="css"/>
+    </h:head>
+    <h:body>
+        <ul id="button">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <br/>
+        <div class="container" >
+
+
+
+            <p class="titulo"> SUBIENDO ARCHIVO</p>
+
+
+            <h:form enctype="multipart/form-data" id="frm">
+
+                <h:panelGrid columns="2">
+
+                    <h:outputLabel value="Nombre"/>
+                    <h:inputText value="#{subirimagenBean.nombre}" />
+                    <h:outputLabel value="Publicacion"/>
+                    <h:inputText value="#{subirimagenBean.publicacion}" />
+                    <h:outputLabel value="Nombre"/>
+                    <h:inputText value="#{subirimagenBean.fecha}" />
+
+
+
+                    <h:outputLabel value="Archivo"/>
+                    <h:inputFile class="subir-imagen" maxlength="50000" value="#{subirimagenBean.fileUpload}"    id="nuestroinput"/>
+
+
+                    <h:commandButton class="btn-registrar" value="Cargar" actionListener="#{subirimagenBean.susbir()}">
+                       <f:ajax execute="frm" render="frm"/>
+                    </h:commandButton>
+                </h:panelGrid>
+            </h:form> 
+
+
+            <p>
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>columna1</th>
+                            <th>columna2</th>
+                            <th>columna3</th>
+                            <th>columna4</th>
+                            <th>columna5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>asdasd</td>
+                            <td>asdasd</td>
+                            <td>asdasd</td>
+                            <td>asdasd</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>asdasd</td>
+                            <td>asdasd</td>
+                            <td>asdasd</td>
+                            <td><p><a  class="enlaceboton" href="#">Editar</a></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
+
+            <c:forEach items="${subirimagenBean.lstimagen}" var="item">
+                <div class="publicacion" >
+                   
+                        <c:if test="${item.indexOf('jpg')>=0}">
+                            <h:graphicImage library="img" name="${item}" class="imagen" />
+                        </c:if>
+                        <c:if test="${item.indexOf('.mp3')>=0}">
+                            <audio  controls="" >
+                                <source src="resources/img/${item}" />
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </c:if>
+                        <c:if test="${item.indexOf('.mp4')>=0}">
+                            <video width="210" height="190" controls=""  >
+                                <source src="resources/img/${item}" type="video/mp4" />
+                                Your browser does not support the <code>video</code> tag.
+                            </video>
+                        </c:if>
+                        
+             
+                </div><br/>
+            </c:forEach>
+
+
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,130 @@
+.titulo{
+    color: darkcyan;
+    font: bolder;
+    font-size: x-large;
+    font-family: sans-serif;
+}
+label{
+    font: bold;
+    font-family: sans-serif;
+}
+
+input[type="text"]{
+    border-radius: 5px;
+    border: 1px;
+    border-style:  solid;
+    border-color: cadetblue;
+    height: 20px;
+}
+
+.btn-registrar
+{
+    color: #ffffff;
+    background: darkcyan;
+    border-radius: 10px;
+    border-color: #ffffff;
+    border-style: solid;
+    height: 35px;  
+}
+.btn-registrar:hover
+{
+    background: cadetblue;
+    border-radius: 10px;
+    border-color: #ffffff;
+    border-style: solid;
+    height: 35px;  
+}
+.btn-registrar2
+{
+    
+    color: #ffffff;
+    background: #004d73;
+    border-radius: 2px;
+    border-color: #ffffff;
+    border-style: solid;
+
+}
+.btn-registrar2:hover
+{
+    background: #002d85;
+    border-radius: 0px;
+    border-color: #ffffff;
+    border-style: solid;
+    height: 35px;  
+}
+
+.tabla
+{
+    columns: 1;
+    border: 0px;
+    border-color: darkcyan;
+    border-style: solid;
+    font-family: sans-serif;
+    font-size: small;
+}
+.tabla th{
+    height: 25px;
+    background: #2586d7;
+    color: #fff;
+}
+.tabla td{
+    border-bottom-color: darkcyan;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+
+
+#button {
+ padding: 0;
+ }
+
+#button li {
+ display: inline;
+ }
+#button li a {
+ font-family: Arial;
+ font-size: 11px;
+ text-decoration: none;
+ float: left;
+ padding: 10px;
+ background-color: #2175bc;
+ color: #fff;
+ }
+ 
+ #button li a:hover {
+ background-color: #2586d7;
+ margin-top: -2;
+ padding-bottom: 12px;
+ }
+ 
+ .enlaceboton {    font-family:  arial; 
+   font-size: 10pt; 
+   font-weight: bold; 
+   padding: 4px; 
+   background-color: #004d73; 
+   color: #fff; 
+   border-radius: 5px;
+
+} 
+.enlaceboton:hover { 
+    background-color: #2586d7; 
+    
+}
+.publicacion
+{
+    width:50%; 
+    height: 200px;
+    border: 1px;
+    border-radius: 15px;
+    border-color: #2175bc ;
+    border-style: solid;
+    
+    
+}
+.publicacion .imagen{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    height: 150px;
+    width: 100%;
+}
